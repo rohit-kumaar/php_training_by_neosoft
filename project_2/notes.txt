@@ -1,0 +1,26 @@
+--> State Management :- It is a process in which we can pass the data from one page into another. By default every web page is a state less we can access the value within the same page, but if we want to access the data from one page into another we have 
+  -> session 
+  -> cookies 
+  -> query string 
+  -> hidden field 
+    ** session is a server side and all are client side.
+    -> session :- It is server side so more secure . Session is used to track a specific informantion untill they found session environment.
+      -> How we start the session environment 
+        session_start();
+      -> How we create session variable 
+       $_SESSION['SESSIONNAME']=value;
+      -> How we read the session 
+        $_SESSION['SESSIONNAME']
+      -> How we Delete the session 
+        session_destroy(); // destroy all session 
+        unset($_SESSION['SESSIONNAME']);//ONLY session is destroy 
+    -> Query String (params) :-  pass data from URL.
+
+    <a href="a.php?cid=101"> Edit </a>
+    header("location:welcome.php?uid=$email")
+    -> how we read data 
+      a.php 
+      <?php 
+          echo $_POST['cid'];
+      ?>
+       

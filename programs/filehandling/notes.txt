@@ -1,0 +1,59 @@
+--> File Handling (File System):- It is a process in which we can store the data in the form of files and folder.
+  -> mkdir("foldername") :- to create a folder 
+  -> is_dir("foldername") :- to check folder is present or not
+  -> scandir("foldername") :- scan all the folder and give us file and foldername is in array.
+  -> rmdir("foldername") :- to remove a folder (folder should be empty before remove )
+
+  -> touch("filename.ext") :- create a file 
+  -> unlink("filename.ext") :- to delete a file 
+  -> file_exists("filename.ext") :- to check a file 
+  -> copy("sourcefile.ext","destinaton.ext")
+  -> rename("oldnme","newname")
+  -> fopen(filename,mode)
+     -> mode :- for which purpose we need to open a file 
+        -> r : read 
+        -> w : write 
+        -> a : append
+    eg:
+    <?php 
+  $fo=fopen("xyz.txt","r");
+  echo fgets($fo)."<br/>";//line by line 
+  echo fgetc($fo)."<br/>";//char by char 
+  echo fread($fo,filesize('xyz.txt'));//whole data read
+?>
+--> Write data 
+  <?php 
+  $fo=fopen("xyzz.txt","w");
+  fwrite($fo,"Hello how r u");
+?>
+
+-> file_put_contents("filename.ext","data"); :- create and write data 
+-> file_get_contents("filename.ext") :- read whole data 
+
+--> include file 
+  include("filename.ext"): It doesnot given a fatel error 
+  require("filename.ext"):It will stop the execution of the script
+
+  --> Ready web pages 
+      File Handling Project 
+    index.php 
+    Login Here 
+Email : textbox 
+Password : textbox 
+  checkbox Remember Me 
+  Login Create New User 
+  regis.php 
+  Registration
+Email 
+Password
+Name 
+Age 
+City 
+Gender 
+Image 
+    Submit 
+dashboard.php 
+ Home  Changepassword  Welcome : username  Logout 
+
+    Image User 
+     Change Im             Welcome User 

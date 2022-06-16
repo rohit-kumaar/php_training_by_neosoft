@@ -1,0 +1,283 @@
+--> Php :- Stand for Hypertext Preprocessor.It is a very popular and widely-used open source server-side scripting language which is used to develop dynamic websites.
+-> client side :- execute by the web browser (javascript)
+-> server side :- execute by the server (database)
+  -> scripting language :- interpriting langauge (line by line )
+  -> Php scripts are executed on the server and the result is sent to the browser as plain HTML.
+  -> We can integrate php with many databases like Mysql, PostgreSql , Oracle , Sql server etc.
+  -> Php is case senstive language 
+  -> extension is .php 
+  -> Environmental Setup 
+    -> xampp 
+    https://www.apachefriends.org/download.html
+    -> How we store the php files 
+      -> htdocs 
+      http://localhost 
+    -> Php tags or delimeters 
+      -> standard tag 
+       <?php 
+        ---
+       ?>
+     -> How we render |  print output
+       echo :- we can write large amount of data 
+       print :- we can write only 1 statement at a time because it return boolean (true|false)
+     -> Comments :- to describe the code 
+        // or # (single line)
+        /*  */ (multiple line)
+     -> htdocs / programs 
+        first.php 
+        <?php 
+          echo "This is my first program";
+        ?>
+    -> How we run the program 
+      http://localhost/programs/first.php 
+        output 
+        This is my first program 
+    -> Every statement is end with semicolon (;)
+    -> Embedding php within HTML
+      <!DOCTYPE html>
+<html>
+    <head>
+        <title> Simple Php Program</title>
+    </head>
+    <body>
+        <h1> <?php echo "Php Program";?></h1>
+    </body>
+</html>
+  -> Variables :- are the temporary memory location which hold input data.
+     syntex:
+       varname=value;
+       -> Rules to define varname
+          -> start with doller($)
+          -> after doller their is an [a-zA-Z] or _ 
+          -> after these combination of [a-zA-Z0-9_]
+        eg:
+        $empName="sumit";
+        $emp_salary=34567;
+   -> Datatypes :- type declaration of variables but in php it allow at runtime as per the variable value.
+      -> integers (123,-123)
+      -> string ("--" , '--'))
+      -> decimal (23.45)
+      -> boolean (true | false)
+      -> array
+      -> objects 
+      -> null 
+      -> resources
+      --> How we find the datatype of a variable 
+        gettype(variablename)
+    --> constant :- It is a value that never be change , it is fixed and permanent.
+        define("API_URL","http://abc.com/products");
+        echo API_URL;
+    --> Operators :- to perform operations 
+       -> Arthematic (calculation)
+          + , - , * , / , % , ++ , -- 
+       -> Assignment Operators 
+          = , +=, -= , /=, %=, *= , %=
+          $a=10;
+          $b=20;
+          $a+=$b; 
+        -> Relational 
+          > , < , >= , <= 
+        -> Comparision 
+           == :- check only value , if value is match then return true 
+           != 
+           === :- check both value and datatype 
+           !== 
+           eg:
+           $a=10;
+           $b="10";
+           if($a==$b) (true)
+           if($a===$b) (false)
+        -> Logical Operator 
+           -> && (and) :- when all the conditons are correct , then return true 
+             if($age>20 && $city==="noida")
+             {
+               //return 
+             }
+           -> || (or) :- when anyone condition is correct , then return true 
+            if($name==="sumit" || $name==="anuj"){
+              //elligibel 
+            }
+           -> ! (not) :- when incorrect then true 
+           eg:
+            if(!$city==="noida"){
+
+            }
+          -> Conditions (selevtion) :- return boolean (true | false)
+            -> if else 
+             if(conditon){
+               //
+             }
+             else {
+
+             }
+             -> if else if else ---
+             -> nested if :- if within another if , when all the if conditon are correct then return true. every if have their own else.
+               if(condition){
+                 if(condition){
+                    true
+                 }
+                 else{
+
+                 }
+               }
+               else {
+
+               }
+
+               if($uname==="sumit" && $pass==="12345"){
+                 echo "Welcome :".$uname;
+               }
+               else {
+                 echo "enter correct Uname or password"
+               }
+          -> Switch Case :- multi-decision making . 
+            switch(exp){
+              case val : statement;
+                  break;
+              ---
+              ---
+              default : statement
+            }
+            --> Assignemnt 
+              1. Wap to assign 5 subject marks in 5 variables and find their total , percentage and grade ? 
+                per>80 : A 
+                per>60 : B 
+                per> 45 : C 
+                Fail 
+            --> Looping :- Iteration (repetation of statement)
+              for loop :- in this loop the condition is check at the start , if condition is correct then loop is execute otherwise terminate.
+                 syntex:
+                   for(initilization; condition ; inc/dec){
+                        statement
+                   }
+                   eg:
+                   for(i=1; i<=5; i++){
+                     console.log(i);
+                   }
+              --> Assigment 
+              -> Wap to assign a value in a variable and find its table upto 10 ?
+                 5 *1 =5 
+                 ---
+                 5*10=50 
+              -> Wap to find the odd numbers between 1 to 100 ? 
+            -> while loop :- It depend on the condition because it return boolean . condition is check at the statring of the loop;
+              eg:
+                while(condition){
+                  statement;
+                }
+              -> Assignment :- 
+                -> Wap to assign a value in a variable and find it is armstrong number or not ?
+                   number whose digits cube sum is equal to the number 
+                     eg:
+                       153 
+                       1+125+27= 153 
+                       370
+                       371 
+              -> do-while :- in this loop condition is check at the end of the loop. so this loop execute at least once while a condition is correct or not.
+                do{
+                  statement;
+                }while(condition);
+
+            -> Array :- array is an group of elements having different type.
+              -> Types of array 
+                  -> Numbered Array 
+                  -> Associative Array 
+                  -> Multi-dimensional Array 
+              -> Numbered Array :- It is a simple array where the values are store in indexs and start with 0;
+               eg:
+                 arrayname=array(val,val,val)
+                   or 
+                  arrayname=[val,val,val]
+              -> foreach() :- used only for an array
+            -> Associative Array :- in this array the index type is either int or string or combo , Its means that we can define our own index as per the requirement.
+             eg:
+              arrayname=[index=>value,index=>val,---];
+              eg:
+              $arr=['ind'=>'india','nep'=>'nepal','chi'=>'china'];
+              echo $arr['nep']
+            -> Multi-dimensional array :- array within another array 
+            eg:
+            $arr=[
+                   "india"=>["cap"=>"delhi","ng"=>"hockey"],
+                   "usa"=>["cap"=>"wasignton","ng"=>"baseball"]
+                   "england"=>["cap"=>"london","ng"=>"cricket"]
+                 ];
+                echo $arr['usa']['ng'];//baseball 
+              S.no  Country  Capital Ngame 
+          -> Assignments 
+            -> Wap to assign 10 values in an array and find the largest and smallest value?
+            -> Wap to assign 10 values in an array and also assign a single value in a variable and find this single value is present in array or not ?
+          -> function :- are used for reusability 
+             -> userdefined 
+             -> pre-defined (array,string,date,number)
+
+             -> userdefined functions 
+                -> without arguments 
+                  function functionname() //define
+                  {
+                    statement;
+                  }
+                  functionname();// call 
+                eg:
+                function abc(){
+                  return "sumit";
+                }
+                echo abc();
+              -> with arguments 
+                 -> call by value 
+                 -> call by reference 
+                   -> Call by value 
+                   function add($a,$b){
+                     $sum=$a+$b;
+                     echo "The sum is ".$sum;
+                   }
+                   add(4,5);
+                   $x=10;
+                   $y=20;
+                   add($x,$y);
+                   -> Call by reference :- Only variables are passed as a argument. To define it we have &(ampersant ) symbol
+                    function add(&$a,&$b){
+                     $sum=$a+$b;
+                     echo "The sum is ".$sum;
+                   }
+                   add(4,5);// only variables are passed as reference
+                   $x=10;
+                   $y=20;
+                   add($x,$y);
+
+                   -> Predefined functions 
+                   Array , String , Math , Date 
+
+  -> Form Handling 
+    -> How we read form field data in php 
+       There are 3 super global array variables 
+        -> $_GET[] :- form method is get 
+        -> $_POST[] :- form method is post 
+        -> $_REQUEST[] :- used wither method is get or post 
+  -> isset() :- check the variable null or not 
+  -> empty() :- check blank or not 
+  -> trim() :- remove whitespaces 
+  -> stripslashes() :- remove backslashes 
+  -> htmlspecialchars()
+
+  --> File Uploading :- It is a process in which we can upload file or folders in a server.
+    To do this form method is always post and we use one attribute (enctype="multipart/form-data")
+
+    $_FILES[] 
+      -> tmpname :- $_FILES['att']['tmp_name']
+      -> name 
+      -> size 
+      -> type 
+      -> error
+      -> when we upload file first it goes to tmp folder in the server then we move to the main folder in a server 
+        move_uploaded_file(tmpname,movepath);
+    -> header() :- redirect one page to another 
+       header("location:dashboard.php")
+    -> array and string methods 
+       https://www.javatpoint.com/php-array-functions
+       https://www.javatpoint.com/php-string-functions
+
+    -> md5() :- hash or encryption (23)
+    -> sha1() :- hash or encryption (40)
+    -> array_rand() : 
+                 

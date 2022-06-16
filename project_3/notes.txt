@@ -1,0 +1,39 @@
+--> State Management :- It is a process in which we can pass the data from one page into another. By default every web page is a state less we can access the value within the same page, but if we want to access the data from one page into another we have 
+  -> session 
+  -> cookies 
+  -> query string 
+  -> hidden field 
+    ** session is a server side and all are client side.
+    -> session :- It is server side so more secure . Session is used to track a specific information until they found session environment.
+      -> How we start the session environment 
+        session_start();
+      -> How we create session variable 
+       $_SESSION['SESSIONNAME']=value;
+      -> How we read the session 
+        $_SESSION['SESSIONNAME']
+      -> How we delete the session 
+        session_destroy(); // destroy all session 
+        unset($_SESSION['SESSIONNAME']);//ONLY session is destroy 
+    -> Query String (params) :-  pass data from URL.
+
+    <a href="a.php?cid=101"> Edit </a>
+    header("location:welcome.php?uid=$email")
+    -> how we read data 
+      a.php 
+      <?php 
+          echo $_POST['cid'];
+      ?>
+    -> cookies :- are the text file which are stored in the client computer.The maximum size is 4kb.Used to store small amount of data.
+      -> types of cookies 
+         -> persistance : permanent
+         -> non-persistance : temporary 
+        -> How we create cookie 
+             setCookie("cookiename",value,exptime) ;// persistance 
+             setCookie("cookiename",value);//non-persistance
+        -> How we read cookies 
+          $_COOKIE['cookiename']
+        -> How we delete cookies 
+         setCookie("cookiename","")
+      --> Hidden filed :- It is a form field which is hidden but we can access the value of the hidden filed anywhere in the program .
+        <input type="hidden" name="h1" value="AS"/>
+       
