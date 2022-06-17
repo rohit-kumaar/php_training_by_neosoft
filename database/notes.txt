@@ -1,0 +1,22 @@
+--> mysqli connectivity 
+  -> How we connect php with mysql 
+     -> mysqli_connect() :- used to connect with database 
+        eg:
+        $con=mysqli_connect("hostname","uname","password","dbname") or die("Connection issue in mysql");
+     -> mysqli_query() :- to execute any mysql query (select,insert ,update , delete , create etc)
+       eg:
+         mysqli_query(connectioname,"query")
+        eg:
+        $query=mysqli_query($con,"select * from xyz");
+     -> mysqli_num_rows() :- find total number of rows given by mysql statement 
+       $nums=mysqli_num_rows($sel);
+       if($nums>0){
+
+       }
+       else {
+        echo "No result found";
+       }
+       -> mysqli_fetch_array() :- $arr[ind] or $arr['columname']
+          mysqli_fetch_assoc() :- $arr['columnname']
+          mysqli_fetch_object() :- $arr->name 
+       -> mysqli_close($con);
