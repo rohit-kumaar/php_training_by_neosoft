@@ -1,0 +1,60 @@
+--> OOPS :- stand Object Oriented Programming Structure. 
+  -> Memory management 
+  -> Reusability 
+  -> sort programming code 
+  --> OOps Features 
+    -> Class , Object , constructor , destructor , access modifiers , inheritance , polymorphism ,getter - setter , abstract class , final class , interface , magic methods 
+
+      -> class :- It is a group of data member , member function and its properties. class is just like a container where we put our code.
+        syntex :
+          class ClassName{
+            //....
+          }
+          eg:
+         class Person
+  {
+    var $myname;
+     function setName($name){
+       $this->myname=$name;
+     }
+     function getName(){
+      echo "The name is ".$this->myname;
+     }
+ }
+ $obj=new Person();
+ $obj->setName("Amit");
+ $obj->getName();
+ -> Constructor :- used to initilize the object it means that if we want to initilize any property when we create an object of a class, then we put into constructor.
+   -> in php we define constructor with the help of _ _construct(){}
+--> Destructor () :- It is used to cleanup the resources when the object is deleted.
+   __destruct() :- no parameter
+-> Access Modifiers 
+   -> public :- accessible anywhere 
+   -> private :- within a class 
+   -> protected :- within a class and its derived class
+
+-> Inheritance :- Reusability , to access the base class properties in a child class.
+  -> extends keyword is used for inheritance 
+    <?php 
+ class A {
+    protected function abc(){
+        return "sumit";
+    }
+ }
+ class B extends A {
+    public function bca(){
+        $fname1="Amit";
+        $fname2=parent::abc();
+        echo $fname1." and ".$fname2." are good friends";
+    }
+ }
+ $obj=new B();
+ $obj->bca();
+ ?>
+
+ --> Overloading and Overriding 
+ --> abstract class and methods 
+ --> static method 
+ --> final class
+ --> Interface 
+ --> Magic Methods (__)
