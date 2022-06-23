@@ -52,9 +52,80 @@
  $obj->bca();
  ?>
 
- --> Overloading and Overriding 
- --> abstract class and methods 
- --> static method 
- --> final class
- --> Interface 
- --> Magic Methods (__)
+ -->Function Overloading and Overriding 
+   Function Overloading : It is a process in which we can define more then 1 same name function in a class but parameter | arguments are diffrent.But php doesnot support it , if we want to acheive this feature we can acheive with __call() :- magic method.
+   eg:
+    <?php 
+ class A {
+    public function __call($met,$arg){
+        if($met==="abc"){
+            if(count($arg)==1){
+                echo "The square is ".($arg[0]*$arg[0]);
+            }
+            if(count($arg)==2){
+                echo "The sum is ".($arg[0]+$arg[1]);
+            }
+        }
+    }
+ }
+ $obj=new A;
+ $obj->abc(5);
+ $obj->abc(5,10);
+ ?>
+
+ --> Function Overriding :- It is a process in which in both the class same function is define , the parent class function property is override in child class.
+  class A {
+    function abc(){
+     echo "Hello";
+    }
+  }
+  class B extends A {
+    function abc(){
+      echo "Bye";
+    }
+  }
+
+  --> abstract class :- It is a class which cant be initilized , if we want to acces the property we need to inherit that class.
+   eg:
+   abstract class A {
+       function abc(){
+        echo "Heelo";
+       }
+     abstract function xyz();
+   }
+   class B extends A {
+     function xyz(){
+       //code
+     }
+   }
+
+   //create object of A 
+   $obj=new A;//cant create 
+
+   $obj1=new B;
+   $obj1->abc();
+   $obj1->xyz();
+
+   --> final class :- which cant be inherited 
+    final class classname 
+    {
+      //
+    }
+
+    -> interface :- It is just like a skelaton where we can declare our common methods and variables , they are define where they implements 
+      -> implements keyword is used to use interface 
+      -> It is a solution of multiple inheritance 
+
+      interface Car{
+        public function Details();
+      }
+      class Ford implements Car {
+        function Details(){
+          //
+        }
+      }
+       class Maruti implements Car {
+        function Details(){
+          //
+        }
+      }
